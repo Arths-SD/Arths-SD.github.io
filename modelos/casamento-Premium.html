@@ -1,11 +1,22 @@
-<body>
-<div id="envelopeTela" class="envelopeTela">
-  <div class="envelope">
-    <h2>Você recebeu um convite especial 💌</h2>
-    <button class="botao" onclick="abrirConvite()">Abrir Convite</button>
-  </div>
-</div>
-<style>.envelopeTela{
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casamento Premium</title>
+
+<style>
+
+body{
+  margin:0;
+  font-family: Georgia, serif;
+  text-align:center;
+  color:white;
+}
+
+/* ENVELOPE */
+
+.envelopeTela{
   position:fixed;
   width:100%;
   height:100vh;
@@ -22,15 +33,25 @@
   border:3px solid #c6a75e;
   border-radius:15px;
   text-align:center;
+  color:#333;
 }
-body{<audio id="musica" loop>
-  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_9f5e52e1a1.mp3?filename=wedding-piano-110624.mp3" type="audio/mp3">
-</audio>
-  margin:0;
-  font-family: 'Georgia', serif;
-  text-align:center;
+
+.botao{
+  margin-top:20px;
+  padding:12px 25px;
+  border:none;
+  border-radius:30px;
+  background:#c6a75e;
   color:white;
+  font-size:16px;
+  cursor:pointer;
 }
+
+.botao:hover{
+  opacity:0.8;
+}
+
+/* CAPA */
 
 .hero{
   height:100vh;
@@ -54,22 +75,38 @@ body{<audio id="musica" loop>
   font-size:20px;
 }
 
-.botao{
-  margin-top:20px;
-  padding:12px 25px;
-  border:none;
-  border-radius:30px;
-  background:#c6a75e;
-  color:white;
-  font-size:16px;
-  cursor:pointer;
-}
 </style>
+</head>
 
+<body>
+
+<audio id="musica" loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_9f5e52e1a1.mp3?filename=wedding-piano-110624.mp3" type="audio/mp3">
+</audio>
+
+<!-- ENVELOPE -->
+<div id="envelopeTela" class="envelopeTela">
+  <div class="envelope">
+    <h2>Você recebeu um convite especial 💌</h2>
+    <button class="botao" id="abrirBtn">Abrir Convite</button>
+  </div>
+</div>
+
+<!-- CAPA -->
 <div class="hero">
-  <h1>Kevin & Jailyn</h1>
-  <p>22 de Maio de 2026</p>
+  <h1>Ana & Carlos</h1>
+  <p>12 de Outubro de 2026</p>
   <button class="botao">Confirmar Presença</button>
 </div>
 
+<script>
+
+document.getElementById("abrirBtn").addEventListener("click", function(){
+  document.getElementById("envelopeTela").style.display = "none";
+  document.getElementById("musica").play();
+});
+
+</script>
+
 </body>
+</html>
