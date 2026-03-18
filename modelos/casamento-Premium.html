@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Convite Premium - Kevin & Jailyn</title>
+<title>Convite Premium - José & Maria</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -12,9 +12,8 @@
 }
 * {margin:0; padding:0; box-sizing:border-box;}
 body {font-family:'Roboto', sans-serif; background: var(--bg-cor); color:#333; line-height:1.6;}
-h1,h2,h3,h4,h5 {font-family:'Playfair Display', serif; color: var(--tema-cor);}
 
-/* Banner */
+/* Banner com overlay */
 .hero {
     position: relative;
     height: 500px;
@@ -23,6 +22,7 @@ h1,h2,h3,h4,h5 {font-family:'Playfair Display', serif; color: var(--tema-cor);}
     align-items:center;
     justify-content:center;
     text-align:center;
+    animation: fadeIn 1.5s ease-in;
 }
 .hero::after {
     content:"";
@@ -33,16 +33,18 @@ h1,h2,h3,h4,h5 {font-family:'Playfair Display', serif; color: var(--tema-cor);}
 }
 .hero h1 {
     position: relative;
-    font-size:3em;
+    font-size:3.5em;
     color:#fff;
-    padding:20px 50px;
+    padding:25px 60px;
     border-radius:15px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    animation: slideDown 1.5s ease-in-out;
 }
 
 /* Música */
 .music {
     text-align:center;
-    margin:15px 0;
+    margin:20px 0;
     font-size:1.2em;
     color:#555;
 }
@@ -50,118 +52,132 @@ h1,h2,h3,h4,h5 {font-family:'Playfair Display', serif; color: var(--tema-cor);}
     background: var(--tema-cor);
     color:#fff;
     border:none;
-    padding:10px 20px;
+    padding:12px 25px;
     font-size:1em;
-    border-radius:10px;
+    border-radius:12px;
     cursor:pointer;
     margin-top:10px;
+    transition: 0.3s;
 }
 .music button:hover {background:#a8795b;}
 
 /* Contagem regressiva */
 .countdown {
     text-align:center;
-    font-size:1.6em;
-    margin:30px 10px;
+    font-size:1.7em;
+    margin:35px 10px;
     font-weight:bold;
     letter-spacing:1px;
+    color:#4a4a4a;
 }
 
 /* Detalhes */
 .details {
-    max-width:750px;
-    margin:30px auto;
+    max-width:780px;
+    margin:35px auto;
     text-align:center;
-    padding:0 10px;
+    padding:0 15px;
 }
-.details h3 {margin-bottom:10px; font-size:1.8em;}
-.details p {font-size:1.25em; margin-bottom:25px; color:#666;}
+.details h3 {margin-bottom:12px; font-size:1.85em;}
+.details p {font-size:1.3em; margin-bottom:28px; color:#555;}
 
-/* Galeria */
+/* Galeria com hover elegante */
 .gallery {
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
-    gap:20px;
-    padding:20px 0;
+    gap:18px;
+    padding:25px 0;
 }
 .gallery img {
     width:230px;
-    border-radius:15px;
-    box-shadow:0 4px 15px rgba(0,0,0,0.2);
-    transition:0.3s;
+    border-radius:18px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.25);
+    transition:0.35s;
+    animation: fadeInGallery 2s ease-in forwards;
 }
-.gallery img:hover {transform:scale(1.05);}
+.gallery img:hover {transform:scale(1.07);}
 
 /* Vídeo */
 .video {
-    max-width:750px;
-    margin:30px auto;
+    max-width:770px;
+    margin:35px auto;
     text-align:center;
 }
 .video video {
     width:100%;
-    border-radius:15px;
-    box-shadow:0 4px 20px rgba(0,0,0,0.25);
+    border-radius:18px;
+    box-shadow:0 6px 25px rgba(0,0,0,0.25);
 }
 
 /* RSVP */
 .rsvp {
     text-align:center;
-    margin:50px 10px;
+    margin:55px 10px;
 }
 .rsvp button {
     background: var(--tema-cor);
     color:#fff;
     border:none;
-    padding:18px 40px;
-    font-size:1.3em;
+    padding:20px 45px;
+    font-size:1.35em;
     border-radius:15px;
     cursor:pointer;
     transition:0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 .rsvp button:hover {background:#a8795b;}
 
 /* Footer */
 footer {
     text-align:center;
-    font-size:0.9em;
+    font-size:0.95em;
     color:#999;
-    padding:25px 10px;
+    padding:28px 10px;
 }
+
+/* Animations */
+@keyframes fadeIn {from{opacity:0;}to{opacity:1;}}
+@keyframes slideDown {from{transform:translateY(-50px);opacity:0;}to{transform:translateY(0);opacity:1;}}
+@keyframes fadeInGallery {from{opacity:0;}to{opacity:1;}}
 </style>
 </head>
 <body>
 
+<!-- Banner -->
 <section class="hero">
-    <h1 id="nome-noivos">Kevin & Jailyn</h1>
+    <h1 id="nome-noivos">José & Maria</h1>
 </section>
 
+<!-- Música -->
 <section class="music">
     Música do casal: <span id="musica">Bridgerton Theme</span><br>
     <audio id="audio" src="bridgerton.mp3" loop></audio>
     <button id="playButton">▶️ Tocar / Pausar</button>
 </section>
 
+<!-- Contagem regressiva -->
 <section class="countdown">
     <div id="timer">Carregando contagem...</div>
 </section>
 
+<!-- Detalhes -->
 <section class="details">
     <h3>Cerimônia</h3>
-    <p id="data-evento">Viernes, 22 de Mayo – 18:30h</p>
+    <p id="data-evento">Domingo, 22 de Março – 16:00h</p>
     <h3>Local</h3>
     <p id="local-evento">Espaço Jardim Encantado, Rua das Flores, 123 – Cidade</p>
 </section>
 
+<!-- Galeria -->
 <section class="gallery">
-    <img src="envelope.jpeg" alt="Envelope">
     <img src="foto.jpeg" alt="Galeria 1">
     <img src="foto (2).jpeg" alt="Galeria 2">
     <img src="foto (3).jpeg" alt="Galeria 3">
     <img src="foto (4).jpeg" alt="Galeria 4">
 </section>
 
+<!-- Vídeo -->
 <section class="video">
     <video controls>
         <source src="bridgerton.mp4" type="video/mp4">
@@ -169,19 +185,20 @@ footer {
     </video>
 </section>
 
+<!-- RSVP -->
 <section class="rsvp">
     <button onclick="confirmar()">Confirmar Presença</button>
 </section>
 
 <footer>
-    Desenvolvido com ❤️ Arths
+    Desenvolvido com ❤️ por ExcluEvent
 </footer>
 
 <script>
 // Personalizações
-const nomeNoivos = "Kevin & Jailyn";
+const nomeNoivos = "José & Maria";
 const musicaNome = "Bridgerton Theme";
-const dataEvento = Viernes 22 de Mayo – 18:30h";
+const dataEvento = "Domingo, 22 de Março – 16:00h";
 const corTema = "#5e7c3c";
 
 document.getElementById("nome-noivos").textContent = nomeNoivos;
@@ -190,7 +207,7 @@ document.getElementById("data-evento").textContent = dataEvento;
 document.documentElement.style.setProperty('--tema-cor', corTema);
 
 // Contagem regressiva
-const countdownDate = new Date("May 22, 2026 18:30:00").getTime();
+const countdownDate = new Date("Mar 22, 2026 16:00:00").getTime();
 const timer = setInterval(function(){
     const now = new Date().getTime();
     const distance = countdownDate - now;
