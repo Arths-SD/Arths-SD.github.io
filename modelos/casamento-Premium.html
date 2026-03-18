@@ -14,7 +14,7 @@
 body {font-family:'Roboto', sans-serif; background: var(--bg-cor); color:#333; line-height:1.6;}
 h1,h2,h3,h4,h5 {font-family:'Playfair Display', serif; color: var(--tema-cor);}
 
-/* Hero / Banner */
+/* Banner */
 .hero {
     position: relative;
     height: 500px;
@@ -134,7 +134,7 @@ footer {
 <body>
 
 <section class="hero">
-    <h1 id="nome-noivos">José & Maria</h1>
+    <h1 id="nome-noivos">Kevin & Jailyn</h1>
 </section>
 
 <section class="music">
@@ -149,7 +149,7 @@ footer {
 
 <section class="details">
     <h3>Cerimônia</h3>
-    <p id="data-evento">Domingo, 22 de Março – 16:00h</p>
+    <p id="data-evento">Viernes, 22 de Mayo – 18:30h</p>
     <h3>Local</h3>
     <p id="local-evento">Espaço Jardim Encantado, Rua das Flores, 123 – Cidade</p>
 </section>
@@ -177,13 +177,12 @@ footer {
 </footer>
 
 <script>
-// Configurações personalizáveis
+// Personalizações
 const nomeNoivos = "José & Maria";
 const musicaNome = "Bridgerton Theme";
 const dataEvento = "Domingo, 22 de Março – 16:00h";
 const corTema = "#5e7c3c";
 
-// Aplicar personalizações
 document.getElementById("nome-noivos").textContent = nomeNoivos;
 document.getElementById("musica").textContent = musicaNome;
 document.getElementById("data-evento").textContent = dataEvento;
@@ -209,7 +208,7 @@ const timer = setInterval(function(){
     }
 }, 1000);
 
-// RSVP moderno
+// RSVP
 function confirmar(){
     const nome = prompt("Digite seu nome:");
     const email = prompt("Digite seu e-mail:");
@@ -220,7 +219,7 @@ function confirmar(){
     }
 }
 
-// Botão Play / Pause
+// Botão Play/Pause
 const audio = document.getElementById("audio");
 const playButton = document.getElementById("playButton");
 playButton.addEventListener("click", () => {
