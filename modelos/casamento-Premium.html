@@ -80,8 +80,8 @@ body{
 
 <body>
 
-<audio id="musica" loop>
-  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_9f5e52e1a1.mp3?filename=wedding-piano-110624.mp3" type="audio/mp3">
+<<audio id="musica" loop preload="auto">
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_9f5e52e1a1.mp3?filename=wedding-piano-110624.mp3" type="audio/mpeg">
 </audio>
 
 <!-- ENVELOPE -->
@@ -106,7 +106,14 @@ document.getElementById("abrirBtn").addEventListener("click", function(){
   document.getElementById("musica").play();
 });
 
+</script><script>
+document.getElementById("abrirBtn").addEventListener("click", function(){
+  document.getElementById("envelopeTela").style.display = "none";
+  
+  var musica = document.getElementById("musica");
+  musica.volume = 0.5;
+  musica.play().catch(function(error){
+    console.log("Autoplay bloqueado:", error);
+  });
+});
 </script>
-
-</body>
-</html>
